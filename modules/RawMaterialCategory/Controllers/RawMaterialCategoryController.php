@@ -17,13 +17,13 @@ class RawMaterialCategoryController extends Controller
      * Raw Material Category
      *
      * @param Request $request
+     * @param RawMaterialCategoryModel $rawMaterialCategoryModel
      * @return \Illuminate\Http\JsonResponse
      */
     public function rawMaterialCategoryLists(Request $request, RawMaterialCategoryModel $rawMaterialCategoryModel)
     {
         try{
             $lists = $rawMaterialCategoryModel->rawMaterialCategoryLists($request->all());
-
             return MessageHelper::successMessage($lists);
         }
         catch(\Exception $e){
@@ -110,10 +110,10 @@ class RawMaterialCategoryController extends Controller
      * Delete Raw Material Category
      *
      * @param Request $request
-     * @param RawMaterialModel $rawMaterialCategoryModel
+     * @param RawMaterialCategoryModel $rawMaterialCategoryModel
      * @return \Illuminate\Http\JsonResponse
      */
-    public function deleteRawMaterialCategory(Request $request, RawMaterialModel $rawMaterialCategoryModel)
+    public function deleteRawMaterialCategory(Request $request, RawMaterialCategoryModel $rawMaterialCategoryModel)
     {
         $validator = Validator::make($request->all(), [
             'id' => 'required'

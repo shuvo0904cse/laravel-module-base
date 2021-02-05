@@ -3,14 +3,13 @@
 
 namespace Modules\Passport\Controllers;
 
-
 use App\Helpers\MessageHelper;
 use App\Helpers\SystemLog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Modules\Passport\Models\RawMaterialCategoryModel;
+use Modules\Passport\Models\UserModel;
 
 class PassportController extends Controller
 {
@@ -57,10 +56,10 @@ class PassportController extends Controller
      * Post Register
      *
      * @param Request $request
-     * @param RawMaterialCategoryModel $userModel
+     * @param UserModel $userModel
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postRegister(Request $request, RawMaterialCategoryModel $userModel)
+    public function postRegister(Request $request, UserModel $userModel)
     {
         $validator = Validator::make($request->all(), [
             'name'              => 'required',

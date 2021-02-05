@@ -18,7 +18,6 @@ class CreateDailyMarketsTable extends Migration
             $table->integer('user_id');
             $table->integer('raw_material_id');
             $table->string('measurement_amount')->default(1);
-            $table->enum('measurement', ["GRAM", "KILO_GRAM", "LITER", "POUND", "PIECE"]);
             $table->float('payment_amount')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
