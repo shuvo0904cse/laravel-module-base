@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Modules\Passport\Models\UserModel;
+use Modules\Passport\Models\RawMaterialCategoryModel;
 
 class PassportController extends Controller
 {
@@ -57,10 +57,10 @@ class PassportController extends Controller
      * Post Register
      *
      * @param Request $request
-     * @param UserModel $userModel
+     * @param RawMaterialCategoryModel $userModel
      * @return \Illuminate\Http\JsonResponse
      */
-    public function postRegister(Request $request, UserModel $userModel)
+    public function postRegister(Request $request, RawMaterialCategoryModel $userModel)
     {
         $validator = Validator::make($request->all(), [
             'name'              => 'required',
@@ -72,7 +72,7 @@ class PassportController extends Controller
         if ($validator->fails()) {
             return MessageHelper::validationErrorMessage($validator->errors()->messages());
         }
-        SystemLog::error("postRegister", "sdsd");
+
         try{
             $userArray = [
                 'name'      => $request->name,

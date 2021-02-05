@@ -9,6 +9,7 @@ return [
     "only_admin_can_delete"                         => "Only admin can delete this record",
     "unable_to_update_information"                  => "You are unable to update your information from here",
     "user_not_exists"                               => "User Not Exists",
+    "not_exists"                                    => "Not Exists",
     "400"                                           => "System Error. Please try again later",
     "unauthorised"                                  => "Unauthorised",
     "executed_successfully"                         => "Executed Successfully",
